@@ -1,3 +1,5 @@
+//NAME:YUVRAJ NILESH DESHMUKH
+//ROLL ON:128 CLASS:SY-CSE-A
 import java.util.Scanner;
 
 public class InventoryManagement {
