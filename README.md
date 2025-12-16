@@ -1,95 +1,87 @@
-//NAME:YUVRAJ NILESH DESHMUKH
-//ROLL ON:128 CLASS:SY-CSE-A
 
-import java.util.Scanner;
 
-public class InventoryManagement {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+# Inventory Management System (Java)
 
-        System.out.print("Enter number of products: ");
-        int n = sc.nextInt();
-        sc.nextLine(); // consume newline
+## 📌 Project Description
+This is a **console-based Inventory Management System** developed in **Java**.  
+The program allows users to manage product records using arrays and perform basic inventory operations such as adding products, viewing inventory, searching products, selling items, and identifying the product with the highest stock.
 
-        int[] productID = new int[n];
-        String[] productName = new String[n];
-        double[] quantityKg = new double[n];   // quantity in kilograms
-        double[] pricePerKg = new double[n];   // price per kilogram
+---
 
-        // Input product records
-        for (int i = 0; i < n; i++) {
-            System.out.println("\nEnter details for Product " + (i+1));
-            System.out.print("ID: ");
-            productID[i] = sc.nextInt();
-            sc.nextLine();
-            System.out.print("Name: ");
-            productName[i] = sc.nextLine();
-            System.out.print("Quantity (in kg): ");
-            quantityKg[i] = sc.nextDouble();
-            System.out.print("Price per kg (in money): ");
-            pricePerKg[i] = sc.nextDouble();
-            sc.nextLine();
-        }
+## 🛠️ Features
+- Add multiple product records
+- Display all inventory items
+- Search a product by Product ID
+- Sell a product (update stock)
+- Calculate total value of each product
+- Identify the product with the highest stock
 
-        // Display all products
-        System.out.println("\n--- Inventory Records ---");
-        for (int i = 0; i < n; i++) {
-            double totalValue = quantityKg[i] * pricePerKg[i];
-            System.out.println("ID: " + productID[i] +
-                               ", Name: " + productName[i] +
-                               ", Quantity: " + quantityKg[i] + " kg" +
-                               ", Price per kg: ₹" + pricePerKg[i] +
-                               ", Total Value: ₹" + totalValue);
-        }
+---
 
-        // Search product by ID
-        System.out.print("\nEnter Product ID to search: ");
-        int searchID = sc.nextInt();
-        boolean found = false;
-        for (int i = 0; i < n; i++) {
-            if (productID[i] == searchID) {
-                double totalValue = quantityKg[i] * pricePerKg[i];
-                System.out.println("Product Found: " + productName[i] +
-                                   ", Quantity: " + quantityKg[i] + " kg" +
-                                   ", Price per kg: ₹" + pricePerKg[i] +
-                                   ", Total Value: ₹" + totalValue);
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("Product with ID " + searchID + " not found.");
-        }
+## 📂 Project Structure
 
-        // Update stock (simulate sale)
-        System.out.print("\nEnter Product ID to sell: ");
-        int sellID = sc.nextInt();
-        System.out.print("Enter quantity sold (in kg): ");
-        double soldQty = sc.nextDouble();
-        for (int i = 0; i < n; i++) {
-            if (productID[i] == sellID) {
-                if (quantityKg[i] >= soldQty) {
-                    quantityKg[i] -= soldQty;
-                    double totalValue = quantityKg[i] * pricePerKg[i];
-                    System.out.println("Sale successful! Remaining stock: " + quantityKg[i] + " kg" +
-                                       ", New Total Value: ₹" + totalValue);
-                } else {
-                    System.out.println("Not enough stock available!");
-                }
-            }
-        }
 
-        // Find product with highest stock
-        double maxStock = quantityKg[0];
-        String maxProduct = productName[0];
-        for (int i = 1; i < n; i++) {
-            if (quantityKg[i] > maxStock) {
-                maxStock = quantityKg[i];
-                maxProduct = productName[i];
-            }
-        }
-        System.out.println("\nProduct with highest stock: " + maxProduct + " (" + maxStock + " kg)");
+InventoryManagement.java
+README.md
 
-        sc.close();
-    }
-}
+
+---
+
+## 🧾 Product Details Stored
+For each product, the following information is recorded:
+- Product ID
+- Product Name
+- Quantity (in kilograms)
+- Price per kilogram
+- Total value (calculated)
+
+---
+
+## ▶️ How to Run the Program
+
+### 1️⃣ Compile the Program
+```bash
+javac InventoryManagement.java
+
+2️⃣ Run the Program
+java InventoryManagement
+
+💻 Sample Operations
+
+Enter product details from the keyboard
+
+View complete inventory records
+
+Search for a product using its ID
+
+Sell a product and update remaining stock
+
+Automatically calculate inventory value
+
+Display product with maximum stock
+
+🧠 Concepts Used
+
+Arrays
+
+Loops (for)
+
+Conditional statements (if-else)
+
+Scanner class for input
+
+Basic arithmetic operations
+
+Java console I/O
+
+📖 Requirements
+
+Java JDK 8 or above
+
+Any Java-supported IDE or Command Prompt
+
+✍️ Author
+
+Developed by [Yuvraj deshmukh]
+
+
